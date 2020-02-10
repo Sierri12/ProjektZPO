@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <TableView fx:id="table" layoutX="29.0" layoutY="358.0" prefHeight="211.0" prefWidth="742.0" />
+      <VBox layoutY="65.0" prefHeight="188.0" prefWidth="306.0">
+         <children>
+            <TextField alignment="CENTER" editable="false" text="Proszę podać nazwę miasta">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <HBox prefHeight="33.0" prefWidth="306.0">
+               <children>
+                  <TextField fx:id="city" alignment="CENTER" prefHeight="34.0" prefWidth="241.0" promptText="Miasto" />
+                  <Button fx:id="btnFind" mnemonicParsing="false" onAction="#onClickbtnFind" prefHeight="34.0" prefWidth="94.0" text="WYSZUKAJ" />
+               </children>
+            </HBox>
+            <TextField alignment="CENTER" editable="false" text="Bądź wczytaj dane z pliku (opcjonalne)">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="path" alignment="CENTER" promptText="Ścieżka pliku" />
+            <Button fx:id="btnLoadPath" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="6.0" mnemonicParsing="false" onAction="#OnClickBTNLoadPath" prefHeight="26.0" prefWidth="335.0" text="WCZYTAJ" textAlignment="CENTER" />
+         </children>
+      </VBox>
+      <Button fx:id="btnSave" layoutX="98.0" layoutY="253.0" mnemonicParsing="false" onAction="#onClickBTNSave" prefHeight="44.0" prefWidth="109.0" text="Zapisz do pliku" />
+      <TextField fx:id="title" alignment="CENTER" editable="false" layoutX="163.0" prefHeight="26.0" prefWidth="474.0" text="Air Condition Viewer">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </TextField>
+      <BarChart fx:id="chart" layoutX="334.0" layoutY="65.0" prefHeight="274.0" prefWidth="452.0">
+        <xAxis>
+          <CategoryAxis fx:id="categoryAxis" label="Parametry" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="numberAxis" label="Wartosci" side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>
